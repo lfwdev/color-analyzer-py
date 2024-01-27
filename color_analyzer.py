@@ -5,7 +5,7 @@ from colorthief import ColorThief
 from sklearn.cluster import KMeans
 
 # Specify the path to your image file
-image_path = 'E:\\Coding\\color-analizer\\storage\\palette sampler 2.jpg'
+image_path = 'E:/Coding/color-analyzer/storage/palette sampler 8.png'
 
 # Create a ColorThief object
 color_thief = ColorThief(image_path)
@@ -35,7 +35,6 @@ def count_colors(palette):
         else:
             color_counter[color_hex] += 1
 
-    print(color_counter)
     return color_counter
 
 def group_similar_colors(palette):
@@ -108,5 +107,5 @@ color_groups = group_similar_colors(palette)
 html_output = generate_html_from_palette(color_groups, color_counter)
 
 # Save the HTML code to a file
-with open('color_palette_result' + str(int(time.time())) + '.html', 'w') as html_file:
+with open('./storage/color_palette_result' + str(int(time.time())) + '.html', 'w') as html_file:
     html_file.write(html_output)
